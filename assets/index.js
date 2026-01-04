@@ -52,13 +52,8 @@ imageInput.addEventListener('change', (event) => {
 
     var file = imageInput.files[0];
     var data = new FormData();
-    // fivemange expects the file field to be named 'file'
     data.append("file", file);
 
-    // Optional: add metadata if you want
-    // data.append("metadata", JSON.stringify({ name: 'Profile image' }));
-
-    // Replace 'YOUR_FM_API_KEY' with your actual fivemange API token
     fetch("https://fmapi.net/api/v2/image", {
         method: 'POST',
         headers: {
@@ -68,7 +63,6 @@ imageInput.addEventListener('change', (event) => {
     })
     .then(result => result.json())
     .then(response => {
-        // fivemange returns the uploaded image URL at response.data.url
         var url = (response && response.data && response.data.url) ? response.data.url : (response && response.url) ? response.url : null;
         if (url) {
             upload.classList.remove("error_shown")
