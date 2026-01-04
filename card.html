@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=0.8, user-scalable=no">
     <meta name="mobile-web-app-capable" content="yes">
 </head>
+
 <body>
     <div class="top_grid">
         <div class="action_grid">
@@ -28,14 +29,16 @@
                 <div class="card card_1">
                     <div class="card_inner">
                         <p class="confirm_name">Dowód osobisty</p>
-                        <p class="confirm_description">Zobaczysz tutaj dane swojego dowodu osobistego. Ale jeśli chcesz potwierdzić tożsamość, potrzebujesz fizycznego dokumentu.</p>
+                        <p class="confirm_description">Zobaczysz tutaj dane swojego dowodu osobistego. Ale jeśli chcesz
+                            potwierdzić tożsamość, potrzebujesz fizycznego dokumentu.</p>
                         <p class="confirm_button" onclick="openPage(2)">Pokaż dane</p>
                     </div>
                 </div>
                 <div class="card card_2">
                     <div class="card_inner">
                         <p class="confirm_name">mDowód</p>
-                        <p class="confirm_description">Nie używaj danych mDowodu w banku (do 31 sierpnia), gdy wyjeżdżasz za granicę lub składasz wniosek o dowód osobisty.</p>
+                        <p class="confirm_description">Nie używaj danych mDowodu w banku (do 31 sierpnia), gdy
+                            wyjeżdżasz za granicę lub składasz wniosek o dowód osobisty.</p>
                         <p class="confirm_button" onclick="openPage(3)">Pokaż dane</p>
                     </div>
                 </div>
@@ -52,7 +55,7 @@
                 </div>
                 <div class="confirm_box">
                     <p class="box_top">Organ wydający</p>
-                    <p class="box_value">URZĄD MIEJSKI W WARSZAWIE</p>
+                    <p class="box_value" id="issuingAuthority">URZĄD MIEJSKI W WARSZAWIE</p>
                 </div>
                 <div class="confirm_box">
                     <p class="box_top">Termin ważności</p>
@@ -76,7 +79,7 @@
                 </div>
                 <div class="confirm_box">
                     <p class="box_top">Organ wydający</p>
-                    <p class="box_value">URZĄD MIEJSKI W WARSZAWIE</p>
+                    <p class="box_value" id="issuingAuthority2">URZĄD MIEJSKI W WARSZAWIE</p>
                 </div>
                 <div class="confirm_box">
                     <p class="box_top">Termin ważności</p>
@@ -84,11 +87,11 @@
                 </div>
                 <div class="confirm_box">
                     <p class="box_top">Imię ojca</p>
-                    <p class="box_value">ANDRZEJ</p>
+                    <p class="box_value" id="fathersName">ANDRZEJ</p>
                 </div>
                 <div class="confirm_box" style="border: none;">
                     <p class="box_top">Imię matki</p>
-                    <p class="box_value">KATARZYNA</p>
+                    <p class="box_value" id="mothersName">KATARZYNA</p>
                 </div>
             </div>
             <p class="confirm_close close_page_2" onclick="closePage()">Zamknij</p>
@@ -127,8 +130,8 @@
 
         </div>
         <div class="id_own_image" style="background-image: url('https://i.imgur.com/7vHo48p.jpg');"></div>
-         <img src="https://i.imgur.com/sW5KVOE.gif" class="flag_video">
-         <img src="https://i.imgur.com/9ipf8YT.gif" class="eagle_video">
+        <img src="https://i.imgur.com/sW5KVOE.gif" class="flag_video">
+        <img src="https://i.imgur.com/9ipf8YT.gif" class="eagle_video">
         <div class="id_data_grid">
             <div class="data_holder">
                 <p class="data_title firstname" id="name"></p>

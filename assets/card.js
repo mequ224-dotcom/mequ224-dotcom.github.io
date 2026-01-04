@@ -1,18 +1,18 @@
 
 var confirmElement = document.querySelector(".confirm");
 
-function closePage(){
+function closePage() {
   clearClassList();
 }
 
-function openPage(page){
+function openPage(page) {
   clearClassList();
   var classList = confirmElement.classList;
   classList.add("page_open");
   classList.add("page_" + page + "_open");
 }
 
-function clearClassList(){
+function clearClassList() {
   var classList = confirmElement.classList;
   classList.remove("page_open");
   classList.remove("page_1_open");
@@ -23,7 +23,7 @@ function clearClassList(){
 var time = document.getElementById("time");
 var options = { year: 'numeric', month: 'numeric', day: 'numeric' };
 
-if (localStorage.getItem("update") == null){
+if (localStorage.getItem("update") == null) {
   localStorage.setItem("update", "24.12.2024")
 }
 
@@ -42,24 +42,24 @@ update.addEventListener('click', () => {
 });
 
 function delay(time) {
-    return new Promise(resolve => setTimeout(resolve, time));
+  return new Promise(resolve => setTimeout(resolve, time));
 }
 
 setClock();
-function setClock(){
-    date = new Date()
-    time.innerHTML = "Czas: " + date.toLocaleTimeString() + " " + date.toLocaleDateString("pl-PL", options);    
-    delay(1000).then(() => {
-        setClock();
-    })
+function setClock() {
+  date = new Date()
+  time.innerHTML = "Czas: " + date.toLocaleTimeString() + " " + date.toLocaleDateString("pl-PL", options);
+  delay(1000).then(() => {
+    setClock();
+  })
 }
 
 var unfold = document.querySelector(".info_holder");
 unfold.addEventListener('click', () => {
 
-  if (unfold.classList.contains("unfolded")){
+  if (unfold.classList.contains("unfolded")) {
     unfold.classList.remove("unfolded");
-  }else{
+  } else {
     unfold.classList.add("unfolded");
   }
 
@@ -68,7 +68,7 @@ unfold.addEventListener('click', () => {
 var data = {}
 
 var params = new URLSearchParams(window.location.search);
-for (var key of params.keys()){
+for (var key of params.keys()) {
   data[key] = params.get(key);
 }
 
@@ -82,16 +82,16 @@ var year = parseInt(birthdaySplit[2]);
 
 var birthdayDate = new Date();
 birthdayDate.setDate(day)
-birthdayDate.setMonth(month-1)
+birthdayDate.setMonth(month - 1)
 birthdayDate.setFullYear(year)
 
 birthday = birthdayDate.toLocaleDateString("pl-PL", options);
 
 var sex = data['sex'];
 
-if (sex === "m"){
+if (sex === "m") {
   sex = "Mężczyzna"
-}else if (sex === "k"){
+} else if (sex === "k") {
   sex = "Kobieta"
 }
 
@@ -107,7 +107,16 @@ setData("birthPlace", data['birthPlace']);
 setData("countryOfBirth", data['countryOfBirth']);
 setData("adress", "ul. " + data['adress1'] + "<br>" + data['adress2'] + " " + data['city']);
 
-if (localStorage.getItem("homeDate") == null){
+if (data['fathersName']) setData("fathersName", data['fathersName'].toUpperCase());
+if (data['mothersName']) setData("mothersName", data['mothersName'].toUpperCase());
+
+if (data['issuingCity']) {
+  var authority = "URZĄD MIEJSKI W " + data['issuingCity'].toUpperCase();
+  setData("issuingAuthority", authority);
+  setData("issuingAuthority2", authority);
+}
+
+if (localStorage.getItem("homeDate") == null) {
   var homeDay = getRandom(1, 25);
   var homeMonth = getRandom(0, 12);
   var homeYear = getRandom(2012, 2019);
@@ -122,30 +131,30 @@ if (localStorage.getItem("homeDate") == null){
 
 document.querySelector(".home_date").innerHTML = localStorage.getItem("homeDate")
 
-if (parseInt(year) >= 2000){
+if (parseInt(year) >= 2000) {
   month = 20 + month;
 }
 
 var later;
 
-if (sex.toLowerCase() === "mężczyzna"){
+if (sex.toLowerCase() === "mężczyzna") {
   later = "0295"
-}else{
+} else {
   later = "0382"
 }
 
-if (day < 10){
+if (day < 10) {
   day = "0" + day
 }
 
-if (month < 10){
+if (month < 10) {
   month = "0" + month
 }
 
 var pesel = year.toString().substring(2) + month + day + later + "7";
 setData("pesel", pesel)
 
-function setData(id, value){
+function setData(id, value) {
 
   document.getElementById(id).innerHTML = value;
 
