@@ -1,16 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 :root{
-    --home: url('https://i.imgur.com/2dhn83I.png');
-    --home-open: url('https://i.imgur.com/snRZd8Y.png');
-    --documents: url('https://i.imgur.com/lZtlC1m.png');
-    --documents-open: url('https://i.imgur.com/IsGxaKU.png');
-    --services: url('https://i.imgur.com/7isZVH1.png');
-    --services-open: url('https://i.imgur.com/VfJjlqg.png');
-    --qr: url('https://i.imgur.com/ZWhsWUD.png');
-    --qr-open: url('https://i.imgur.com/IN7owEB.png');
-    --more: url('https://i.imgur.com/1Bg8T7m.png');
-    --more-open: url('https://i.imgur.com/ESjnL7k.png');
+    --home: url('images/2dhn83I.png');
+    --home-open: url('images/snRZd8Y.png');
+    --documents: url('images/lZtlC1m.png');
+    --documents-open: url('images/IsGxaKU.png');
+    --services: url('images/7isZVH1.png');
+    --services-open: url('images/VfJjlqg.png');
+    --qr: url('images/ZWhsWUD.png');
+    --qr-open: url('images/IN7owEB.png');
+    --more: url('images/1Bg8T7m.png');
+    --more-open: url('images/ESjnL7k.png');
     --text: #024b97;
     --shadow: 0px 0px 10px rgb(224, 224, 224);
 }
